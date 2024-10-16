@@ -6,6 +6,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/login', function () {
+Route::match(['get', 'post'], '/login', function () {
     return view('sign.in');
+});
+
+Route::match(['get', 'post'], '/signup', function () {
+    return view('sign.up');
 });
