@@ -1,36 +1,48 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  @vite('resources/css/app.css') <!-- Vite directive for CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Vite and Tailwind CSS Integration -->
+    @vite('resources/css/app.css') <!-- Adjust if using Blade directive for Vite -->
 </head>
-<body class="bg-gray-100">
-    <section class="flex overflow-hidden flex-col px-11 pt-8 pb-52 bg-white max-md:px-5 max-md:pb-24">
-        <header class="self-start text-xl font-semibold text-white">Your Logo</header>
-        <main class="flex flex-col justify-center items-center self-center px-8 py-20 mt-36 max-w-full text-center bg-white min-h-[482px] rounded-[40px] shadow-[0px_4px_35px_rgba(0,0,0,0.08)] w-[575px] max-md:px-5 max-md:mt-10">
-            <div class="flex flex-col max-w-full w-[474px]">
-                <div class="flex flex-col max-md:max-w-full">
-                    <h1 class="text-6xl font-semibold text-stone-700 max-md:max-w-full max-md:text-4xl">Selamat Datang</h1>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+    <section class="flex flex-col px-11 pt-8 pb-52 bg-white rounded-lg shadow-lg max-md:px-5 max-md:pb-24"> 
+        <!-- Header Section -->
+        <header class="text-xl font-semibold text-gray-800 mb-4 text-center">Your Logo</header>
+        
+        <!-- Main Section -->
+        <main class="flex flex-col justify-center items-center px-8 py-20 text-center bg-white rounded-3xl shadow-lg w-[575px] max-md:px-5 max-md:mt-10">
+            <div class="w-full max-w-[474px] flex flex-col">
+                <!-- Welcome Text -->
+                <h1 class="text-6xl font-semibold text-stone-700 mb-8 max-md:text-4xl">Selamat Datang</h1>
 
-                    <!-- Log in form -->
-                    <form action="/login" method="POST" class="flex flex-col items-center mt-16 w-full h-52 text-base font-bold text-white max-md:mt-10 max-md:max-w-full">
-                        @csrf <!-- CSRF token -->
-                        <div class="flex flex-col justify-center max-w-full min-h-[226px] w-[451px]">
-                            <button type="submit" class="px-36 py-4 mt-4 w-full whitespace-nowrap bg-lime-700 rounded-lg shadow min-h-[54px] max-md:px-5 max-md:max-w-full">Log in</button>
-                        </div>
-                    </form>
+                <!-- Log in Form -->
+                <form action="/login" method="POST" class="flex flex-col items-center w-full mt-4 text-base font-bold text-white">
+                    @csrf <!-- Blade directive for CSRF token -->
+                    <div class="w-full flex flex-col gap-4">
+                        <button type="submit" class="px-28 py-3 bg-lime-700 rounded-lg shadow w-full min-h-[54px] hover:bg-lime-600">
+                            Log in
+                        </button>
+                    </div>
+                </form>
 
-                    <!-- Sign up form -->
-                    <form action="/signup" method="POST" class="flex flex-col items-center w-full h-52 text-base font-bold text-white max-md:max-w-full">
-                        @csrf
-                        <div class="flex flex-col justify-center max-w-full min-h-[226px] w-[451px]">
-                            <button type="submit" class="px-36 py-4 mt-4 w-full whitespace-nowrap bg-lime-700 rounded-lg shadow min-h-[54px] max-md:px-5 max-md:max-w-full">Daftar</button>
-                        </div>
-                    </form>
+                <!-- Sign up Form -->
+                <form action="/signup" method="POST" class="flex flex-col items-center w-full mt-4 text-base font-bold text-white">
+                    @csrf <!-- Blade directive for CSRF token -->
+                    <div class="w-full flex flex-col gap-4">
+                        <button type="submit" class="px-28 py-3 bg-lime-700 rounded-lg shadow w-full min-h-[54px] hover:bg-lime-600">
+                            Daftar
+                        </button>
+                    </div>
+                </form>
 
-                    <!-- Guest mode button -->
-                    <button type="button" class="gap-2.5 self-stretch px-36 py-5 mt-4 w-full bg-white rounded-lg border-solid shadow border border-zinc-400 min-h-[54px] text-stone-700 max-md:px-5 max-md:max-w-full">Mode Tamu</button>
+                <!-- Guest Mode Button -->
+                <div class="w-full flex flex-col gap-4 mt-4">
+                    <button type="button" class="px-28 py-3 bg-white rounded-lg border border-zinc-400 shadow w-full text-stone-700 hover:bg-gray-100">
+                        Mode Tamu
+                    </button>
                 </div>
             </div>
         </main>
