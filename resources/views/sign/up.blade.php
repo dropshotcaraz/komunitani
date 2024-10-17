@@ -23,7 +23,7 @@
         <main class="flex flex-col justify-center items-center px-8 py-10 text-center bg-white rounded-3xl shadow-lg w-[575px] max-md:px-5 max-md:mt-10">
             <div class="w-full max-w-[474px] flex flex-col">
                 <!-- Welcome Text -->
-                <h1 class="text-4xl font-bold text-stone-700 mb-4 max-md:text-4xl">Daftar</h1>
+                <h1 class="text-4xl font-bold text-stone-700 mb-4 self-start text-left max-md:text-4xl">Daftar</h1>
 
             <!-- Login Form -->
             <form action="/login" method="POST" class="flex flex-col space-y-4 justify" >

@@ -13,3 +13,7 @@ Route::match(['get', 'post'], '/login', function () {
 Route::match(['get', 'post'], '/signup', function () {
     return view('sign.up');
 });
+
+Route::match(['get', 'post'], '/reset', function () {
+    return view('sign.reset');
+});
