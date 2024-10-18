@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
-
+use Illuminate\Support\Facades\Session;
 
 
 class AuthController extends Controller
@@ -34,5 +34,25 @@ class AuthController extends Controller
         ]);
 
         return response()->json(['success' => 'User created successfully']);
+    }
+    public function login(Request $request)
+    {
+        // Validate the request
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:8',
+        ]);
+
+        // Check if the user exists
+        $user = User::where('email', $request->email)->first();
+
+        if ($user && Hash::check($request->password, $user->password)) {
+            // Generate token if needed or start session (optional)
+            return response()->json(['status' => 'success', 'message' => 'Login successful']);
+        } else {
+            return response()->json(['status' => 'error', 'message' => 'Invalid email or password'], 401);
+        }
+
+        if 
     }
 }

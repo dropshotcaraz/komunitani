@@ -11,13 +11,4 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::post('/signup', [AuthController::class, 'signup']);
-
-// Route::post('/login', function (Request $request)  {
-//     $response = User::where('email', $request->input('email'))
-//                 ->where('password', Hash:($request->input('password')))->count();
-//     if ($response > 0) {
-//         return response()->json(['success' => 'Login successful']);
-//     } else {
-//         return response()->json(['error' => 'Login failed']);
-//     }
-// });
+Route::post('/login', [AuthController::class, 'login']);
