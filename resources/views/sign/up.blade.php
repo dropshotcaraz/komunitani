@@ -95,16 +95,16 @@
                 },
                 messages: {
                     username: {
-                        required: "Username is required",
-                        minlength: "Username must be at least 5 characters"
+                        required: "Username tidak boleh kosong",
+                        minlength: "Username minimal 5 karakter"
                     },
                     email: {
-                        required: "Email is required",
-                        email: "Enter a valid email address"
+                        required: "Email tidak boleh kosong",
+                        email: "Email tidak valid"
                     },
                     password: {
-                        required: "Password is required",
-                        minlength: "Password must be at least 8 characters"
+                        required: "Password tidak boleh kosong",
+                        minlength: "Password minimal 8 karakter"
                     }
                 },
                 errorClass: 'text-red-500 font-semibold underline text-left',
