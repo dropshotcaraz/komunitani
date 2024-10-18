@@ -17,3 +17,7 @@ Route::match(['get', 'post'], '/signup', function () {
 Route::match(['get', 'post'], '/reset', function () {
     return view('sign.reset');
 });
+
+Route::match(['get', 'post'], '/homepage', function () {
+    return view('homepage');
+});
