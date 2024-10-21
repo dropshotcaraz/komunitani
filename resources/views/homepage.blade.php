@@ -37,9 +37,9 @@
                     Chatbot
                 </a>
                 <a href="#" class="block text-lg font-medium text-gray-700 hover:bg-gray-100 p-2 rounded-lg flex items-center">
-                    <img src={{ Vite::asset('public/images/profile.png') }} alt="Profile" class="h-6 w-6 mr-2">
-                    Profile
-                </a>
+                <img src="{{ Vite::asset('public/images/profile.png') }}" alt="Profile" class="h-6 w-6 mr-2">
+                {{ session()->get('user_name', 'Profile') }}  <!-- Display the username, or 'Profile' as a fallback -->
+                 </a>
                 <button id="logoutButton" class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600 w-full">
                     Logout
                 </button>
