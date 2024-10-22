@@ -21,3 +21,7 @@ Route::match(['get', 'post'], '/reset', function () {
 Route::match(['get', 'post'], '/homepage', function () {
     return view('homepage');
 });
+
+Route::match(['get', 'post'], '/search', function () {
+    return view('search');
+});

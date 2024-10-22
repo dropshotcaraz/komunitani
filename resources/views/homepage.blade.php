@@ -12,10 +12,10 @@
     <!-- Vite and Tailwind CSS Integration -->
     @vite('resources/css/app.css') <!-- Adjust if using Blade directive for Vite -->
 </head>
-<body class="bg-gradient-to-r from-gray-200/50 to-gray-300/50">
+<body class="bg-gray-300 bg-opacity-25">
     <div class="grid grid-cols-1 md:grid-cols-12 min-h-screen">
         <!-- Sidebar -->
-        <aside class="col-span-12 md:col-span-2 bg-white h-screen p-4 shadow-lg fixed md:relative m-4 rounded-3xl">
+        <aside class="col-span-12 md:col-span-2 bg-white h-screen p-6 shadow-lg fixed top-0 left-0 m-4 rounded-3xl">
             <div class="flex justify-center items-center mb-2">
                 <!-- <img src={{ Vite::asset('public/images/homeicon.png') }} alt="Home" class="h-6 w-6 mr-2"> -->
                 <img
@@ -30,7 +30,7 @@
                     <img src={{ Vite::asset('public/images/homeicon.png') }} alt="Home" class="h-6 w-6 mr-2">
                     Home
                 </a>
-                <a href="#" class="block text-lg font-medium text-gray-700 hover:bg-gray-100 p-2 rounded-lg flex items-center">
+                <a href="/search" class="block text-lg font-medium text-gray-700 hover:bg-gray-100 p-2 rounded-lg flex items-center">
                     <img src={{ Vite::asset('public/images/search.png') }} alt="Search" class="h-6 w-6 mr-2">
                     Search
                 </a>
@@ -53,7 +53,7 @@
         </aside>
 
         <!-- Main Content Area -->
-        <main class="col-span-12 md:col-span-7 p-6 mt-20 md:mt-0">
+        <main class="col-span-12 md:col-span-9 p-4 mt-20 md:mt-0 md:ml-[220px] w-auto">
             <!-- Post Bar -->
             <div class="bg-white shadow p-4 rounded-3xl mb-10">
                 <div class="flex items-center">
@@ -64,7 +64,7 @@
                     <form id="postForm" class="w-full">
                     
                     <div class="flex justify-end mt-4">
-                        <div class="flex space-x-2 mb-2">
+                        <div class="flex space-x-2 mb-1">
                             <div class="bg-white-200 border border-gray-400 p-1 text-sm rounded-3xl cursor-pointer hover:bg-gray-100 transition-colors duration-200" 
                                 onclick="selectQuestion()">Pertanyaan</div>
                             <div class="bg-white-200 border border-gray-400 p-1 text-sm rounded-3xl cursor-pointer hover:bg-gray-100 transition-colors duration-200" 
@@ -94,6 +94,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18v18H3z"/>
                                     </svg>
                                 </button>
+                                
                             </div>
 
                             <!-- <div class="flex items-center space-x-2">
@@ -112,8 +113,8 @@
                             <button type="submit" id="submitPost" class="w-1/2 bg-[#618805] text-white px-4 py-2 rounded-3xl mt-4">Kirim</button>
                         </div>
 
-                        <!-- <button type="submit" id="submitPost" class="w-1/2 flex justify-center mt-4 bg-[#618805] text-white px-4 py-2 rounded-lg">Kirim</button> -->
-                    </form>
+                        <!-- <button type="submit" id="submitPost" class="w-1/2 flex justify-center mt-4 bg-[#618805] text-white px-4 py-2 rounded-lg">Kirim</button>
+                    </form> -->
                 </div>
 
                 <div id="postPreview"></div>
@@ -136,6 +137,9 @@
                         <button class="flex items-center text-gray-500 hover:text-green-500">
                             <img src="{{ Vite::asset('public/images/likes.png') }}" alt="Likes" class="h-6 w-6 mr-2"> 1k
                         </button>
+                        <button class="flex items-center text-gray-500 hover:text-green-500">
+                            <img src="{{ Vite::asset('public/images/likes.png') }}" alt="Likes" class="h-6 w-6 mr-2"> 1k
+                        </button>
                         <button class="flex items-center text-gray-500 hover:text-blue-500">
                             <img src={{ Vite::asset('public/images/comment.png') }} alt="Comment" class="h-6 w-6 mr-2"> 1k
                         </button>
@@ -146,6 +150,7 @@
                 </div>
             </div>
 
+            <!-- Post Feed 2 -->
             <div id="postFeed">
                 <!-- Placeholder posts -->
                 <div class="bg-white shadow p-4 rounded-3xl mb-6">
@@ -162,6 +167,9 @@
                         <button class="flex items-center text-gray-500 hover:text-green-500">
                             <img src="{{ Vite::asset('public/images/likes.png') }}" alt="Likes" class="h-6 w-6 mr-2"> 1k
                         </button>
+                        <button class="flex items-center text-gray-500 hover:text-green-500">
+                            <img src="{{ Vite::asset('public/images/likes.png') }}" alt="Likes" class="h-6 w-6 mr-2"> 1k
+                        </button>
                         <button class="flex items-center text-gray-500 hover:text-blue-500">
                             <img src={{ Vite::asset('public/images/comment.png') }} alt="Comment" class="h-6 w-6 mr-2"> 1k
                         </button>
@@ -172,6 +180,7 @@
                 </div>
             </div>
 
+            <!-- Post Feed 3 -->
             <div id="postFeed">
                 <!-- Placeholder posts -->
                 <div class="bg-white shadow p-4 rounded-3xl mb-6">
@@ -188,6 +197,9 @@
                         <button class="flex items-center text-gray-500 hover:text-green-500">
                             <img src="{{ Vite::asset('public/images/likes.png') }}" alt="Likes" class="h-6 w-6 mr-2"> 1k
                         </button>
+                        <button class="flex items-center text-gray-500 hover:text-green-500">
+                            <img src="{{ Vite::asset('public/images/likes.png') }}" alt="Likes" class="h-6 w-6 mr-2"> 1k
+                        </button>
                         <button class="flex items-center text-gray-500 hover:text-blue-500">
                             <img src={{ Vite::asset('public/images/comment.png') }} alt="Comment" class="h-6 w-6 mr-2"> 1k
                         </button>
@@ -197,10 +209,11 @@
                     </div>
                 </div>
             </div>
+
         </main>
 
         <!-- Trending Section -->
-        <aside class="col-span-12 md:col-span-3 bg-white h-screen p-6 shadow-lg hidden md:block rounded-3xl m-4">
+        <aside class="col-span-12 md:col-span-3 bg-white h-screen p-6 shadow-lg hidden md:block rounded-3xl m-4 fixed top-0 right-0">
             <div class="bg-gray-100 shadow p-2 rounded-3xl mb-6 flex items-center">
                 <button class="p-1 rounded-lg ml-4 hover:bg-gray-200">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
